@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Book from './Book.js';
+
 class SearchPage extends React.Component {
   render() {
     return  (
@@ -20,7 +22,11 @@ class SearchPage extends React.Component {
           </div>
         </div>
         <div className="search-books-results">
-          <ol className="books-grid"></ol>
+          <ol className="books-grid">
+            <li>
+              <Book />
+            </li>
+          </ol>
         </div>
       </div>
     );
