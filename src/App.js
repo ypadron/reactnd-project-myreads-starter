@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Route } from 'react-router-dom'
 import MainPage from './components/MainPage.js';
 import SearchPage from './components/SearchPage.js';
 
@@ -31,17 +31,17 @@ class BooksApp extends React.Component {
     /*console.log(this.state.books);*/
     return (
       <div className="app" >
-        {this.state.showSearchPage === false && (
-        <MainPage
-          books={this.state.books}
-          moveShelf={this.moveShelf}
-        />
-      )}
-        {this.state.showSearchPage === true && (
-        <SearchPage
-          moveShelf={this.moveShelf}
-        />
-        )}
+        <Route exact path='/' render={() => (
+          <MainPage
+            books={this.state.books}
+            moveShelf={this.moveShelf}
+          />
+        )}/>
+        <Route path='/search' component={() => (
+          <SearchPage
+            moveShelf={this.moveShelf}
+          />
+        )}/>
       </div>
     )
   }
