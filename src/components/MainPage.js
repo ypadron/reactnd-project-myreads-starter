@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 // import BookShelf from './BookShelf.js'
 import Book from './Book.js';
 
@@ -85,9 +85,12 @@ class MainPage extends React.Component {
           </div>
         </div>
         <div className="open-search">
-          <a
-          onClick={(event) => this.setState({ showSearchPage: true })}
-          >Add a book</a>
+          <Link
+          to='/search'
+          className='add-book'
+          onClick={() => this.setState({ showSearchPage: true })}>
+          Add a book
+          </Link>
         </div>
       </div>
     );
