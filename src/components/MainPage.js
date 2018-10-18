@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 // import BookShelf from './BookShelf.js'
 import Book from './Book.js';
 
-// Access  to books array
+// Access to books array
 // this.props.books
 
 class MainPage extends React.Component {
@@ -29,6 +29,8 @@ class MainPage extends React.Component {
                         <li key={book.id}>
                           <Book
                             book={book}
+                            moveShelf={this.props.moveShelf}
+                            currentShelf='currentlyReading'
                             />
                         </li>
                       ))
@@ -38,7 +40,7 @@ class MainPage extends React.Component {
             </div>
 
             <div className="bookshelf">
-              <h2 className="bookshelf-title">'Want to Read'</h2>
+              <h2 className="bookshelf-title">Want to Read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   {
@@ -48,6 +50,9 @@ class MainPage extends React.Component {
                         <li key={book.id}>
                           <Book
                             book={book}
+                            moveShelf={this.props.moveShelf}
+                            currentShelf='wantToRead'
+
                           />
                         </li>
                       ))
@@ -57,7 +62,7 @@ class MainPage extends React.Component {
             </div>
 
             <div className="bookshelf">
-              <h2 className="bookshelf-title">'Read'</h2>
+              <h2 className="bookshelf-title">Read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   {
@@ -67,6 +72,8 @@ class MainPage extends React.Component {
                         <li key={book.id}>
                           <Book
                             book={book}
+                            moveShelf={this.props.moveShelf}
+                            currentShelf='read'
                            />
                         </li>
                       ))
@@ -78,7 +85,9 @@ class MainPage extends React.Component {
           </div>
         </div>
         <div className="open-search">
-          <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+          <a
+          onClick={(event) => this.setState({ showSearchPage: true })}
+          >Add a book</a>
         </div>
       </div>
     );
