@@ -29,8 +29,9 @@ class MainPage extends React.Component {
                         <li key={book.id}>
                           <Book
                             book={book}
+                            // setShelf={this.props.setShelf}
                             moveShelf={this.props.moveShelf}
-                            currentShelf='currentlyReading'
+                            currentShelf="currentlyReading"//{book.shelf}
                             />
                         </li>
                       ))
@@ -51,7 +52,7 @@ class MainPage extends React.Component {
                           <Book
                             book={book}
                             moveShelf={this.props.moveShelf}
-                            currentShelf='wantToRead'
+                            currentShelf="wantToRead"//{book.shelf}
 
                           />
                         </li>
@@ -73,7 +74,7 @@ class MainPage extends React.Component {
                           <Book
                             book={book}
                             moveShelf={this.props.moveShelf}
-                            currentShelf='read'
+                            currentShelf="read"//{book.shelf}
                            />
                         </li>
                       ))
