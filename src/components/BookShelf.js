@@ -18,9 +18,9 @@ class BookShelf extends React.Component {
                 <li key={book.id}>
                   <Book
                     book={book}
-                    setShelf={this.props.setShelf}
+                    // setShelf={this.props.setShelf}
                     moveShelf={this.props.moveShelf}
-                    currentShelf={book.shelf}
+                    currentShelf="currentlyReading"//{book.shelf}
                     />
                 </li>
               ))
@@ -41,7 +41,7 @@ class BookShelf extends React.Component {
                   <Book
                     book={book}
                     moveShelf={this.props.moveShelf}
-                    currentShelf={book.shelf}
+                    currentShelf="wantToRead"//{book.shelf}
 
                   />
                 </li>
@@ -63,7 +63,7 @@ class BookShelf extends React.Component {
                   <Book
                     book={book}
                     moveShelf={this.props.moveShelf}
-                    currentShelf={book.shelf}
+                    currentShelf="read"//{book.shelf}
                    />
                 </li>
               ))
@@ -71,6 +71,9 @@ class BookShelf extends React.Component {
         </ol>
       </div>
     </div>
+
+  </div>
+</div>
 */
     );
   }
