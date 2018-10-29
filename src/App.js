@@ -11,11 +11,18 @@ class BooksApp extends React.Component {
     showSearchPage: false,
     books: []
   }
-
+//this.state.books = something - NEVER do this!!! Use set state instead
   componentDidMount() {
       BooksAPI.getAll().then((books) => {
         this.setState({ books })
       })
+    }
+
+    setShelf = (book) => {
+      return this.props.book.shelf === 'currentlyReading' ? 'currentlyReading'
+        : this.props.book.shelf === 'wantToRead' ? 'wantToRead'
+        : this.props.book.shelf === 'read' ? 'read'
+        : this.props.book.shelf === 'none';
     }
 
     moveShelf = (book, shelf) => {
@@ -34,12 +41,15 @@ class BooksApp extends React.Component {
         <Route exact path='/' render={() => (
           <MainPage
             books={this.state.books}
+            // setShelf={this.setShelf}
             moveShelf={this.moveShelf}
           />
         )}/>
         <Route path='/search' component={() => (
           <SearchPage
+            // setShelf={this.setShelf}
             moveShelf={this.moveShelf}
+            books={this.state.books}
           />
         )}/>
       </div>
