@@ -7,53 +7,53 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 class BooksApp extends React.Component {
+
   state = {
     showSearchPage: false,
     books: []
   }
+
 //this.state.books = something - NEVER do this!!! Use set state instead
   componentDidMount() {
       BooksAPI.getAll().then((books) => {
         this.setState({ books })
       })
     }
-
-    setShelf = (book) => {
+/*
+    setShelf = (book, shelf) => {
       return this.props.book.shelf === 'currentlyReading' ? 'currentlyReading'
         : this.props.book.shelf === 'wantToRead' ? 'wantToRead'
         : this.props.book.shelf === 'read' ? 'read'
         : this.props.book.shelf === 'none';
     }
+*/
 
-    moveShelf = (book, shelf) => {
+    updateShelf = (book, shelf) => {
       BooksAPI.update(book, shelf);
+      this.componentDidMount();
+    };
 
-      // Check video at 1:34:00 (embed this in another method - this is to save time)
-      BooksAPI.getAll().then((books) => {
-        this.setState({ books })
-      })
-    }
 
   render() {
-    /*console.log(this.state.books);*/
+    console.log(this.state.books);
     return (
       <div className="app" >
         <Route exact path='/' render={() => (
           <MainPage
             books={this.state.books}
             // setShelf={this.setShelf}
-            moveShelf={this.moveShelf}
+            updateShelf={this.updateShelf}
           />
         )}/>
         <Route path='/search' component={() => (
           <SearchPage
             // setShelf={this.setShelf}
-            moveShelf={this.moveShelf}
+            updateShelf={this.updateShelf}
             books={this.state.books}
           />
         )}/>
       </div>
-    )
+    );
   }
 }
 
