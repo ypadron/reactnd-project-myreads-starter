@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import Book from './Book.js';
 import * as BooksAPI from '../BooksAPI'
 
-import escapeRegExp from 'escape-string-regexp'
-
 
 class SearchPage extends React.Component {
   state = {
@@ -12,8 +10,8 @@ class SearchPage extends React.Component {
     searchedBooks: []
   }
 
-  updateQuery = (query, props) => {
-    this.setState({ query: query})
+  updateQuery = (query) => {
+    this.setState({ query: query});
     this.updateSearchedBooks(query);
   }
 
@@ -36,40 +34,36 @@ class SearchPage extends React.Component {
       <div className="search-books">
         <div className="search-books-bar">
           <Link to='/' className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</Link>
-          <div className="search-books-input-wrapper">
 
+          <div className="search-books-input-wrapper">
             < input type="text"
               placeholder="Search by title or author"
               value={this.state.query}
-              onChange={(event) => this.updateQuery(event.target.value)}
-            />
-
+              onChange={(event) => this.updateQuery(event.target.value)}/>
           </div>
         </div>
 
         <div className="search-books-results">
           <ol className="books-grid">
-            {this.state.searchedBooks
-              .map(searchedBook => {
-                let shelf = "none";
+            {this.state.searchedBooks.map(searchedBook => {
+                let shelf = 'none';
 
-                this.props.books.map(book => (
+                this.props.books.map(book =>  (
                   book.id === searchedBook.id ?
-                  shelf = book.shelf :
-                  ''
+                  shelf = book.shelf : ''
                 ));
-                return (
+
+                return(
                   <li key={searchedBook.id}>
                     <Book
                       book={searchedBook}
                       // setShelf={this.props.setShelf}
-                      moveShelf={this.props.moveShelf}
+                      updateShelf={this.props.updateShelf}
                       currentShelf={shelf}
                     />
                   </li>
                 );
-              })
-            }
+              })};
           </ol>
         </div>
       </div>
