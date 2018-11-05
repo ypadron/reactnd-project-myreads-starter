@@ -1,21 +1,21 @@
 import React from 'react';
+// import { Link } from 'react-router-dom'
+// import * as BooksAPI from '../BooksAPI'
 
 
 class Book extends React.Component {
   render() {
-    let displayedThumbnail = this.props.book.imageLinks ?
+    let displayThumbnail = this.props.book.imageLinks ?
     this.props.book.imageLinks.thumbnail : '';
+
 
     return  (
       <div className="book">
         <div className="book-top">
-          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${displayedThumbnail}")` }}></div>
+          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${displayThumbnail}")` }}></div>
           <div className="book-shelf-changer">
-            <select
-              onChange={(event) => this.props.moveShelf(
-                this.props.book, event.target.value
-              )}
-              value={this.props.currentShelf} //{this.props.currentShelf} or {this.props.book.shelf}
+            <select onChange={(event) => this.props.updateShelf(this.props.book, event.target.value)}
+              value={this.props.currentShelf || "none"}
             >
               <option value="move" disabled>Move to...</option>
               <option value="currentlyReading">Currently Reading</option>
