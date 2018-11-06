@@ -1,5 +1,5 @@
-import React from 'react'
-import { Route } from 'react-router-dom'
+import React from 'react';
+import { Route } from 'react-router-dom';
 import MainPage from './components/MainPage.js';
 import SearchPage from './components/SearchPage.js';
 
@@ -10,7 +10,7 @@ class BooksApp extends React.Component {
   state = {
     showSearchPage: false,
     books: []
-  }
+  };
 
   componentDidMount() {
       BooksAPI.getAll().then((books) => {

@@ -17,7 +17,7 @@ class BookShelf extends React.Component {
                   currentShelf={book.shelf}
                   />
               </li>
-            ))} {/*DO NOT PUT A SEMICOLON HERE*/}
+            ))}
         </ol>
       </div>
     </div>

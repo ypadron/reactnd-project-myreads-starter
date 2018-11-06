@@ -8,12 +8,12 @@ class SearchPage extends React.Component {
   state = {
     query: '',
     searchedBooks: []
-  }
+  };
 
   updateQuery = (query, props) => {
     this.setState({ query: query});
     this.updateSearchedBooks(query);
-  }
+  };
 
   updateSearchedBooks = (query) => {
     if (query) {
@@ -23,11 +23,11 @@ class SearchPage extends React.Component {
         } else {
           this.setState({ searchedBooks: searchedBooks })
         }
-      })
+      });
   } else {
       this.setState({ searchedBooks: [] });
     }
-  }
+  };
 
   render() {
     return  (
@@ -62,7 +62,7 @@ class SearchPage extends React.Component {
                     />
                   </li>
                 );
-              })} {/*DO NOT PUT A SEMICOLON HERE*/}
+              })}
           </ol>
         </div>
       </div>
