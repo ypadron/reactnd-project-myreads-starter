@@ -15,7 +15,7 @@ Front End Web Developer Nanodegree Program
 
 ## Description
 
-Project #6 in the Udacity FEND Grow with Google program. I used React to create four components along with React Router to add interactivity to the provided static HTML and CSS template.
+Project #6 - MyReads is a single page React application that allows users to select and organize books into three categories or bookshelves: Currently Reading, Want To Read, and Read.
 
 ## Instructions
 
