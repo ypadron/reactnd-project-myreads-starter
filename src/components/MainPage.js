@@ -1,17 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BookShelf from './BookShelf.js';
-// import * as BooksAPI from '../BooksAPI'
 
-// import Book from './Book.js'; //If I import the BKSLF do I also import Book or does it come with the shelf?
-
-// Access to books array
-// this.props.books
 
 class MainPage extends React.Component {
   render() {
-  console.log(this.props.books);
-
     return  (
       <div className="list-books">
         <div className="list-books-title">

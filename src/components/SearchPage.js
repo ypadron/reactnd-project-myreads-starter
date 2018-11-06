@@ -57,7 +57,6 @@ class SearchPage extends React.Component {
                   <li key={searchedBook.id}>
                     <Book
                       book={searchedBook}
-                      // setShelf={this.props.setShelf}
                       updateShelf={this.props.updateShelf}
                       currentShelf={shelf}
                     />
