@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import BookShelf from './BookShelf.js'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import BookShelf from './BookShelf.js';
 // import * as BooksAPI from '../BooksAPI'
 
 // import Book from './Book.js'; //If I import the BKSLF do I also import Book or does it come with the shelf?
