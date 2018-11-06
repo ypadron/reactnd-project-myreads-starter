@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Book from './Book.js';
-import * as BooksAPI from '../BooksAPI'
+import * as BooksAPI from '../BooksAPI';
 
 
 class SearchPage extends React.Component {
@@ -10,12 +10,12 @@ class SearchPage extends React.Component {
     searchedBooks: []
   }
 
-  updateQuery = (query) => {
+  updateQuery = query => {
     this.setState({ query: query});
     this.updateSearchedBooks(query);
   }
 
-  updateSearchedBooks = (query) => {
+  updateSearchedBooks = query => {
     if (query) {
       BooksAPI.search(query).then((searchedBooks) => {
         if (searchedBooks.error) {
@@ -63,7 +63,7 @@ class SearchPage extends React.Component {
                     />
                   </li>
                 );
-              })};
+              })} {/*DO NOT PUT A SEMICOLON HERE*/}
           </ol>
         </div>
       </div>
