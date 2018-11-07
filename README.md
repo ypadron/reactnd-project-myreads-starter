@@ -31,6 +31,7 @@ To install:
 
 * [React Docs: Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
 * [React Docs: State and Life Cycle](https://reactjs.org/docs/state-and-lifecycle.html)
+* [React Docs: Debounce](https://reactjs.org/docs/faq-functions.html#debounce)
 * [React Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)
 * [MyReads Walk-Thru by Maeva from EMEA](https://www.youtube.com/watch?v=i6L2jLHV9j8)
 * [FEND Project 6 - Walk Through (SHORT) by @RyanWaite.ProjectCoach [FEND, MWS]](https://www.youtube.com/watch?v=N8bU1oWlLwY&feature=youtu.be)
