@@ -25,7 +25,7 @@ To install:
 3. Install all project dependencies with `npm install`.
 4. Open a new terminal window, cd into the project root folder, - start the development server with `npm start`.
 
-<!-- To view click here: [MyReads: A Book Tracking App](https://ypadron.github.io/reactnd-project-myreads-starter/) -->
+To view click here: [MyReads: A Book Tracking App](https://ypadron.github.io/reactnd-project-myreads-starter/)
 
 ## Resources
 
